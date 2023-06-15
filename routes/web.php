@@ -16,6 +16,10 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
+    return view('landing');
+});
+
+Route::get('/dashboard', function (){
     return view('welcome');
 });
 

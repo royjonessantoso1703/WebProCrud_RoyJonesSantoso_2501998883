@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     public function loginprocess(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('dashboard');
         }else{
             return redirect('login')->with('danger','Salah Input Email atau Password');
         }

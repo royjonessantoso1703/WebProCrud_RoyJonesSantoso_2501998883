@@ -1,5 +1,9 @@
 @extends('layout.admin')
 
+@php
+    use App\Models\DataAnggota;
+@endphp
+
 @section('content')
 
 <div class="content-wrapper">
@@ -8,12 +12,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v2</h1>
+            <h1 class="m-0">Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v2</li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,7 +31,7 @@
                     <input type="search" name="noanggota" id="inputPassword6" class="form-control" aria-describedby="passwordHelpBlock">
                 </div>
             </div>
-         
+
             <div class="row">
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success" role="alert">
@@ -63,9 +67,10 @@
                             </td>
                         </tr>
                     @endforeach
-                        
+
+
                     </tbody>
-                </table>    
+                </table>
                 {{ $data->links() }}
             </div>
         </div>
